@@ -1,8 +1,9 @@
 from flask import (
     Flask,
-    render_template,
-   Blueprint, Response, request
+
 )
+
+import database
 
 app = Flask(__name__, template_folder="templates")
 
@@ -18,4 +19,6 @@ def home():
 
 
 if __name__ == '__main__':
+    database.global_init()
     app.run(debug=True)
+
